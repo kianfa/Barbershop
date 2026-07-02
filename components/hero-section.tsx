@@ -62,12 +62,12 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[64%_45%] sm:object-[center_45%]"
+          className="object-cover object-[74%_45%] sm:object-[center_45%]"
         />
 
         <video
           ref={videoRef}
-          className={`hero-motion-video absolute inset-0 h-full w-full scale-100 object-cover object-[64%_45%] sm:object-[center_45%] ${
+          className={`hero-motion-video absolute inset-0 h-full w-full scale-100 object-cover object-[74%_45%] sm:object-[center_45%] ${
             prefersReducedMotion ? 'hidden' : ''
           }`}
           autoPlay={!prefersReducedMotion}
@@ -89,7 +89,7 @@ export function HeroSection() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-background/55 via-transparent to-background/35 sm:from-background/80 sm:to-background/40" />
 
         <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto w-full max-w-6xl -translate-y-[15px] px-4 pb-6 sm:translate-y-0 sm:pb-20">
+          <div className="mx-auto w-full max-w-6xl -translate-y-[52px] px-4 pb-6 sm:translate-y-0 sm:pb-20">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/60 px-3 py-1 text-[11px] font-medium text-primary backdrop-blur sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs">
               <Star className="h-3 w-3 fill-primary sm:h-3.5 sm:w-3.5" />
               آرایشگاه مردانه مهدی خوش‌قدم
