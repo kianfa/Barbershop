@@ -1,7 +1,58 @@
+'use client'
+
 import Image from 'next/image'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Star, Clock } from 'lucide-react'
 
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(true)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const syncMotionPreference = () => {
+      setPrefersReducedMotion(mediaQuery.matches)
+    }
+
+    syncMotionPreference()
+    mediaQuery.addEventListener('change', syncMotionPreference)
+
+    return () => {
+      mediaQuery.removeEventListener('change', syncMotionPreference)
+    }
+  }, [])
+
+  useEffect(() => {
+    const video = videoRef.current
+
+    if (!video) {
+      return
+    }
+
+    if (prefersReducedMotion) {
+      video.pause()
+      return
+    }
+
+    video.play().catch(() => {
+      // Some browsers may block autoplay; the poster remains visible as fallback.
+    })
+  }, [prefersReducedMotion])
+
+  const replayHeroVideo = useCallback(() => {
+    const video = videoRef.current
+
+    if (!video || prefersReducedMotion) {
+      return
+    }
+
+    video.currentTime = 0
+    video.play().catch(() => {
+      // Keep the current/poster frame if playback is blocked.
+    })
+  }, [prefersReducedMotion])
+
   return (
     <section id="home" className="relative overflow-hidden pt-16">
       <div className="relative min-h-[92vh] w-full">
@@ -11,18 +62,21 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_45%]"
         />
 
         <video
-          className="hero-motion-video absolute inset-0 h-full w-full object-cover object-center"
-          autoPlay
+          ref={videoRef}
+          className={`hero-motion-video absolute inset-0 h-full w-full scale-100 object-cover object-[center_45%] ${
+            prefersReducedMotion ? 'hidden' : ''
+          }`}
+          autoPlay={!prefersReducedMotion}
           muted
-          loop
           playsInline
           preload="metadata"
           poster="/videos/hero-barber-poster.webp"
           aria-hidden="true"
+          onClick={replayHeroVideo}
         >
           <source src="/videos/hero-barber-av1.webm" type='video/webm; codecs="av01"' />
           <source src="/videos/hero-barber-vp9.webm" type='video/webm; codecs="vp9"' />
@@ -31,8 +85,8 @@ export function HeroSection() {
         </video>
 
         {/* overlays for cinematic depth + readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-l from-background/80 via-transparent to-background/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-background/80 via-transparent to-background/40" />
 
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-6xl px-4 pb-14 sm:pb-20">
