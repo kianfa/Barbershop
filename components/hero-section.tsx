@@ -62,12 +62,12 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_45%]"
+          className="object-cover object-[58%_45%] sm:object-[center_45%]"
         />
 
         <video
           ref={videoRef}
-          className={`hero-motion-video absolute inset-0 h-full w-full scale-100 object-cover object-[center_45%] ${
+          className={`hero-motion-video absolute inset-0 h-full w-full scale-100 object-cover object-[58%_45%] sm:object-[center_45%] ${
             prefersReducedMotion ? 'hidden' : ''
           }`}
           autoPlay={!prefersReducedMotion}
@@ -86,7 +86,7 @@ export function HeroSection() {
 
         {/* overlays for cinematic depth + readability */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-background/80 via-transparent to-background/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-background/55 via-transparent to-background/35 sm:from-background/80 sm:to-background/40" />
 
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-6xl px-4 pb-6 sm:pb-20">
