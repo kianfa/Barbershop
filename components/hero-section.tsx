@@ -89,44 +89,44 @@ export function HeroSection() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-background/80 via-transparent to-background/40" />
 
         <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto w-full max-w-6xl px-4 pb-14 sm:pb-20">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/60 px-4 py-1.5 text-xs font-medium text-primary backdrop-blur">
-              <Star className="h-3.5 w-3.5 fill-primary" />
+          <div className="mx-auto w-full max-w-6xl px-4 pb-6 sm:pb-20">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/60 px-3 py-1 text-[11px] font-medium text-primary backdrop-blur sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs">
+              <Star className="h-3 w-3 fill-primary sm:h-3.5 sm:w-3.5" />
               آرایشگاه مردانه مهدی خوش‌قدم
             </span>
 
-            <h1 className="mt-5 max-w-xl text-balance text-4xl font-black leading-tight text-foreground sm:text-6xl">
+            <h1 className="mt-3 max-w-xl text-balance text-3xl font-black leading-[1.12] text-foreground sm:mt-5 sm:text-6xl sm:leading-tight">
               استایل حرفه‌ای،
               <span className="block text-primary text-glow">اصلاح بی‌نقص</span>
             </h1>
 
-            <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-2.5 max-w-[19rem] text-pretty text-sm leading-6 text-muted-foreground sm:mt-4 sm:max-w-md sm:text-base sm:leading-relaxed">
               رزرو آنلاین نوبت آرایشگاه مردانه مهدی خوش‌قدم با انتخاب خدمت و ساعت
               دلخواه.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-7 sm:flex sm:flex-row sm:gap-3">
               <a
                 href="/booking"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.03] glow-green"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-4 py-3 text-xs font-bold text-primary-foreground transition-transform hover:scale-[1.03] sm:min-h-0 sm:px-7 sm:py-3.5 sm:text-sm glow-green"
               >
                 رزرو نوبت
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-background/60 px-7 py-3.5 text-sm font-bold text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background/60 px-4 py-3 text-xs font-bold text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary sm:min-h-0 sm:px-7 sm:py-3.5 sm:text-sm"
               >
                 مشاهده خدمات
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-muted-foreground">
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground sm:mt-8 sm:gap-x-6 sm:gap-y-3 sm:text-xs">
               <span className="inline-flex items-center gap-1.5">
-                <Star className="h-4 w-4 fill-primary text-primary" />
+                <Star className="h-3.5 w-3.5 fill-primary text-primary sm:h-4 sm:w-4" />
                 امتیاز ۴.۹ از ۵
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" />
                 رزرو آنلاین و سریع
               </span>
             </div>
