@@ -92,7 +92,7 @@ export function HeroSection() {
           <div className="mx-auto w-full max-w-6xl -translate-y-[52px] px-4 pb-6 sm:translate-y-0 sm:pb-20">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/60 px-3 py-1 text-[11px] font-medium text-primary backdrop-blur sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs">
               <Star className="h-3 w-3 fill-primary sm:h-3.5 sm:w-3.5" />
-              آرایشگاه مردانه مهدی خوش‌قدم
+              آرایشگاه مردانه شهاب 
             </span>
 
             <h1 className="mt-3 max-w-xl text-balance text-3xl font-black leading-[1.12] text-foreground sm:mt-5 sm:text-6xl sm:leading-tight">

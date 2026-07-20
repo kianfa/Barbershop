@@ -16,7 +16,7 @@ export function SiteHeader() {
           </span>
           <span className="text-sm font-bold leading-tight text-foreground">
             آرایشگاه
-            <span className="block text-primary text-glow">مهدی خوش‌قدم</span>
+            <span className="block text-primary text-glow">شهاب</span>
           </span>
         </a>
 

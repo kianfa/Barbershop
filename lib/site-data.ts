@@ -1,7 +1,7 @@
-export const BARBER_NAME = 'مهدی خوش‌قدم'
+export const BARBER_NAME = 'شهاب'
 export const PHONE = '۰۲۱-۷۷۸۸۹۹۰۰'
 export const PHONE_TEL = '02177889900'
-export const ADDRESS = 'تبریز، ایل‌گلی'
+export const ADDRESS = 'تهران شهرک نفت'
 export const MAP_URL = 'https://www.google.com/maps/search/?api=1&query=Tabriz%20El%20Goli'
 
 export type Service = {
